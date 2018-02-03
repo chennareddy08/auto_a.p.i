@@ -1,0 +1,6 @@
+url1="http://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins=90403&destinations=90405"
+        r1 = requests.get(url1)
+
+        a1 = r1.json()
+        b=a1['rows'][0]['elements'][0]['distance']['text']
+        print(b)

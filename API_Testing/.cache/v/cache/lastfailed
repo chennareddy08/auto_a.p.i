@@ -1,0 +1,4 @@
+{
+  "ClientAPI_Post.py::BookHandstand::test_signupClientAPI": true,
+  "getAPI_test.py::GetAPI_test::test_searchAPI_singlezipcode": true
+}

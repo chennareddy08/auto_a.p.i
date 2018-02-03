@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Handstand API Automation Test Report</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>Handstand API Automation Test Report</h1>
+<p class='attribute'><strong>Start Time:</strong> 2016-11-25 13:31:58</p>
+<p class='attribute'><strong>Duration:</strong> 0:01:04.955479</p>
+<p class='attribute'><strong>Status:</strong> Pass 13</p>
+
+<p class='description'>Test Automation Report</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>
+</tr>
+
+<tr class='passClass'>
+    <td>getAPI_test.GetAPI_test</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_getapi</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: [SUCCESS]when calling[http://stage.handstandapp.com/api/gymlocations]
+{"result":"success","data":[{"id":"1","name":"Pro Gym Brentwood","address":"11943 Montana Ave # 100, Los Angeles, CA 90049","private":"1","city":"Los Angeles","enabled":1},{"id":"3","name":"David Barton West LA","address":"12100 W Olympic Blvd, Los Angeles, CA 90064","private":"1","city":"Los Angeles","enabled":1},{"id":"6","name":"Temp gyms","address":"2nd street, santa monica, ca 90401","private":"1","city":"Los Angeles","enabled":1}]}
+[SUCCESS]when calling[http://stage.handstandapp.com/api/gymregions]
+{"result":"success","data":[{"id":"1","name":"Los Angeles","timezone":"America\/Los_Angeles","locations":"Agoura Hills,Beverly Hills,Brentwood,Burbank,Calabasas,Canoga Park,Chatsworth,Culver City,Downtown LA,East Hollywood,East Los Angeles,Echo Park,Encino,Glendale,Granada Hills,Hermosa Beach,Huntington Park,Huntington Beach,Irvine,Laguna Beach,Long Beach,Malibu,Manhattan Beach,Marina,Mission Hills,Newbury Park,Newport Beach,Northridge,North Hills,North Hollywood,Oak Park,Oxnard,Pacific Palisades,Pacoima,Palos Verdes Peninsula,Panorama City,Pasadena,Playa Vista,Rancho Palos Verdes,Redondo Beach,Reseda,San Fernando,Santa Monica,Sherman Oaks,Silverlake,South Pasadena,Studio City,Sylmar,San Fernando Valley,Tarzana,Thousand Oaks,Toluca Lake,Universal City,Valley Village,Van Nuys,Venice,West Hills,West LA,Westlake Village,Westwood,West Hollywood,Wilshire,Winnetka,Woodland Hills,LA County,South LA County,Orange County,Bel Air,Playa Del Rey,Central LA,Beverlywood,Ventura County,EAGLE ROCK,TORRANCE,MONTEBELLO,Yorba Linda,ALISO VIEJO,ANAHEIM,ALISO VIEJO,ANAHEIM,ATWOOD,BREA,BUENA PARK,CAPISTRANO BEACH,CORONA DEL MAR,COSTA MESA,CYPRESS,DANA POINT,EAST IRVINE,EL TORO,FOOTHILL RANCH,FOUNTAIN VALLEY,FULLERTON,GARDEN GROVE,LA HABRA,LA PALMA,LADERA RANCH,LAGUNA HILLS,LAGUNA NIGUEL,LAKE FOREST,LOS ALAMITOS,MIDWAY CITY,MISSION VIEJO,NEWPORT COAST,ORANGE,PLACENTIA,RANCHO SANTA MARGARITA,SAN CLEMENTE,SAN JUAN CAPISTRANO,SANTA ANA,SEAL BEACH,SILVERADO,STANTON,SUNSET BEACH,TRABUCO CANYON,TUSTIN,VILLA PARK,WESTMINISTER","single_price":"79.00","group_price":"89.00"},{"id":"2","name":"New York","timezone":"America\/New_York","locations":"Central Bronx,Bronx Park and Fordham,High Bridge and Morrisania,Hunts Point and Mott Haven,Kingsbridge and Riverdale,Northeast Bronx,Southeast Bronx,Central Brooklyn,Southwest Brooklyn,Borough Park,Canarsie and Flatlands,Southern Brooklyn,Northwest Brooklyn,Flatbush,East New York and New Lots,Greenpoint,Sunset Park,Bushwick and Williamsburg,Central Harlem,Chelsea and Clinton,East Harlem,Gramercy Park and Murray Hill,Greenwich Village and Soho,Lower Manhattan,Lower East Side,Upper East Side,Upper West Side,Inwood and Washington Heights,Northeast Queens,North Queens,Central Queens,Jamaica,Northwest Queens,West Central Queens,Rockaways,Southeast Queens,Southwest Queens,West Queens,Port Richmond,South Shore,Stapleton and St. George,Mid-Island","single_price":"79.00","group_price":"89.00"},{"id":"3","name":"Boston","timezone":"America\/New_York","locations":"Hampden County,Hampshire County,Worcester County,Berkshire County,Franklin County,Middlesex County,Essex County,Plymouth County,Norfolk County,Bristol County,Suffolk County,Barnstable County,Dukes County,Nantucket County","single_price":"79.00","group_price":"89.00"},{"id":"4","name":"San Francisco","timezone":"America\/Los_Angeles","locations":"San Mateo County, Santa Barbara County,Santa Clara County,Stanislaus County, Sonoma County,Tulare County, San Francisco County","single_price":"79.00","group_price":"89.00"},{"id":"5","name":"San Diego","timezone":"America\/Los_Angeles","locations":"Los Angeles County,Orange County, Ventura Country","single_price":"79.00","group_price":"89.00"},{"id":"6","name":"Austin","timezone":"America\/Chicago","locations":"Travis County,Williamson County","single_price":"79.00","group_price":"89.00"},{"id":"7","name":"Chicago","timezone":"America\/Chicago","locations":"Cook County,Dupage County,Kane County,Lake County,Will County","single_price":"79.00","group_price":"89.00"},{"id":"8","name":"Dallas","timezone":"America\/Chicago","locations":"Dallas County,Collin County, Denton County, Tarrant County","single_price":"79.00","group_price":"89.00"},{"id":"9","name":"Washington DC","timezone":"America\/New_York","locations":"District of Columbia","single_price":"79.00","group_price":"89.00"},{"id":"10","name":"Houston","timezone":"America\/Chicago","locations":"Brazoria County,Fort Bend County,Harris County,Montgomery County","single_price":"79.00","group_price":"89.00"},{"id":"11","name":"New Jersey","timezone":"America\/New_York","locations":"Middlesex County,Hudson County,Essex County,Morris County,Bergen County,Passaic County,Union County,Somerset County,Sussex County,Monmouth County,Warren County,Hunterdon County,Salem County,Camden County,Ocean County,Burlington County,Gloucester County,Atlantic County,Cape May County,Cumberland County,Mercer County","single_price":"79.00","group_price":"89.00"},{"id":"12","name":"Sacramento","timezone":"America\/Los_Angeles","locations":"Sacramento County,San Benito County,Yolo County","single_price":"79.00","group_price":"89.00"},{"id":"13","name":"San Antonio","timezone":"America\/Chicago","locations":"Bexar County","single_price":"79.00","group_price":"89.00"},{"id":"14","name":"Santa Barbara","timezone":"America\/Los_Angeles","locations":"Santa Barbara County","single_price":"79.00","group_price":"89.00"},{"id":"15","name":"Seattle","timezone":"America\/Los_Angeles","locations":"King County,Kitsap County,Pierce County,Snohomish County","single_price":"79.00","group_price":"89.00"}]}
+[SUCCESS]when calling[https://stage.handstandapp.com/api/booknotification?access_token=27022c2e9ad63028960370733ec21e3a]
+{"result":"success","status":200,"message":"No Bookings for you right now"}
+[SUCCESS]when calling[https://stage.handstandapp.com/api/profile?access_token=27022c2e9ad63028960370733ec21e3a]
+{"result":"success","access_token":"27022c2e9ad63028960370733ec21e3a","data":{"user_id":"10075","trainer_id":"9904","firstname":"handstand3","lastname":"developer3","email":"developer3@handstandapp.com","mobile":"3107523148","location":"&lt;location&gt;","passport":0,"passport_start":"0000-00-00","orderPlaced":0,"billingMonthEndDate":"0000-00-00","remainingWorkouts":0,"stripeCustomer":"","ccBrand":"","ccLast4":"","type":"Trainer","trainerDashboardURL":"http:\/\/prod-handstand-web.us-east-1.elasticbeanstalk.com\/"}}
+[SUCCESS]when calling[https://stage.handstandapp.com/api/TrainerAppointments?access_token=27022c2e9ad63028960370733ec21e3a]
+{"result":"success","data":[]}
+[SUCCESS]when calling[https://stage.handstandapp.com/api/getavailibility?access_token=27022c2e9ad63028960370733ec21e3a]
+{"result":"success","access_token":"27022c2e9ad63028960370733ec21e3a","data":[{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"6:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"5:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"6:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"5:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"7:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"6:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"7:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"6:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"8:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"7:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"8:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"7:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"9:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"8:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"9:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"8:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"10:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"9:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"10:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"9:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"11:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"10:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"11:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"10:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"12:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"11:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"12:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"11:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"13:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"12:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"13:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"12:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"14:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"13:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"14:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"13:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"15:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"14:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"15:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"14:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"16:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"15:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"16:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"15:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"17:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"16:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"17:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"16:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"18:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"17:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"18:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"17:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"19:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"18:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"19:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"18:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"20:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"19:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"20:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"19:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"21:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"20:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"21:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"20:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"22:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"21:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"22:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"21:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"23:00:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"22:00:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904},{"coupon":"","custom1":"","custom2":"","date":"2016-11-26","daywiselocation":"","description":"","discount":"","event_id":0,"finish":"23:30:00","group_price":0,"id":0,"name":"","rating":0,"rating_comments":"","session_comments":"","session_discount":0,"session_firstname":"","session_location":"","session_mobile":"","session_price":0,"session_quantity":0,"session_size":"","session_type":"","session_zip":0,"single_price":0,"start":"22:30:00","status":0,"stock":0,"updated_at":"0000-00-00 00:00:00","user_id":9904}]}
+[SUCCESS]when calling[https://stage.handstandapp.com/api/listclients?access_token=27022c2e9ad63028960370733ec21e3a]
+{"result":"success","data":[]}
+[SUCCESS]when calling[https://stage.handstandapp.com/api/login?email=developer4%40handstandapp.com&amp;password=handstand]
+{"result":"success","access_token":"7b7abe2b1b49461c096acb126073d470","url":"&lt;url to go here&gt;","message":"","data":{"user_id":"10076","trainer_id":"9905"}}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>postAPI_test.PostAPI_test</td>
+    <td>12</td>
+    <td>12</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',12)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiClient_availibility</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: text/html; charset=UTF-8
+[ERROR] when calling[http://stage.handstandapp.com/api/availibility?] got back HTTP response code:405
+{'Transfer-Encoding': 'chunked', 'Server': 'Apache', 'Connection': 'Keep-alive', 'allow': 'POST', 'Cache-Control': 'no-cache, private', 'Date': 'Fri, 25 Nov 2016 21:32:12 GMT', 'Content-Type': 'text/html; charset=UTF-8'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiClient_book</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        pass</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.2: 982e675c78cb48d35d896b1d138b47d9
+application/json
+[ERROR] when calling[https://stage.handstandapp.com/api/book?] got back HTTP response code:400
+{'Content-Length': '45', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6IktqcEs1Mnp5ZU5BQ1FUVXRmTzMrZHc9PSIsInZhbHVlIjoiYXpjQmlEXC9sRTlLOGZVRTc4eHFKVFFZRDhhbHo4MUJFTlwvUDdGTGx5R1hPQXFHT1lzUnpySjNxWDE2N0NwcUlFeTl0VGN4bURJR1JsdXdcL3Vhd2ZaU1E9PSIsIm1hYyI6ImRmOTMzMmZlOTEwMzMyY2NhYTQ1MTlmNjVmNTgxMTJhOWI0MTg5M2MzNDQ5MWM3ZWU0MTM3NzVlYjM4NDc2ZDYifQ%3D%3D; expires=Fri, 25-Nov-2016 23:32:14 GMT; Max-Age=7200; path=/, laravel_session=eyJpdiI6ImN6TUFpWkxaU25UTjVxSkxLbnZmVWc9PSIsInZhbHVlIjoiM2d2NjN0dVExQ3RvaFUza2hJRVpvY1hsZWdxVEVjM25mcFVIZUJFV3I3UUlZck45TUhOSTlpVGFmamc3MmZmUHVHQ1NMSnhKNGd5TEtTdW5kZVwvaXRRPT0iLCJtYWMiOiI4ODQ2ODg0N2E3OTU2NzRhNTcyZTMzYWE2MWZkZjlhMDg0Y2Y1YjMzNDY3ZGI2OWNlYjZhNDkxNTMzYmI5OThjIn0%3D; expires=Fri, 25-Nov-2016 23:32:14 GMT; Max-Age=7200; path=/; httponly', 'Server': 'Apache', 'Connection': 'Keep-alive', 'Cache-Control': 'no-cache', 'Date': 'Fri, 25 Nov 2016 21:32:14 GMT', 'Content-Type': 'application/json'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiClient_booknotification</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
+        pass</a>
+
+    <div id='div_pt2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.3: text/html; charset=UTF-8
+[ERROR] when calling[https://stage.handstandapp.com/api/booknotification?] got back HTTP response code:405
+{'Transfer-Encoding': 'chunked', 'Server': 'Apache', 'Connection': 'Keep-alive', 'allow': 'GET, HEAD', 'Cache-Control': 'no-cache, private', 'Date': 'Fri, 25 Nov 2016 21:32:16 GMT', 'Content-Type': 'text/html; charset=UTF-8'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiClient_cart</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.4')" >
+        pass</a>
+
+    <div id='div_pt2.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.4: application/json
+[ERROR] when calling[https://stage.handstandapp.com/api/cart?] got back HTTP response code:422
+{'Content-Length': '48', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6IkhyMFlMTk1OYUhJbVg1eGdqRWRtVkE9PSIsInZhbHVlIjoiNUtFRWs4VmZseUxMeDlOcFlwZmFjTlwvcXltZ1BOOUFaQXE0WWdJdjc1cEg3QjA0Q3VYdzNXV3B3K01VVGtNTDFHT0Z2RjNjd2ZTdGR4d2c2dnY2a2hnPT0iLCJtYWMiOiJmYzYxYWQ1MTcyYmRkZDhmYTI0ZTdmNDVjNzQ3YTA5MmQ0MzBlNDFjMjI1NDRiZmI0YmQ3ZDEyYmE5MTA1NTc3In0%3D; expires=Fri, 25-Nov-2016 23:32:18 GMT; Max-Age=7200; path=/, laravel_session=eyJpdiI6IkRHOGhkMytUK21FOE12RTlBVk53Mnc9PSIsInZhbHVlIjoid2N1MHBHR3pQRGhuRDhnMG5oNzJIMHV1VGpwcUpaM3U5cUJ3MjVwQlJwOUFVbGErQ3ZBQVB1TEVKTTl5bXF6VEdMUW1rVGxaZHVQZkhDQ0xiSTcyU1E9PSIsIm1hYyI6ImVlYTIzMGQzY2UwODA4NzhjYTY3ZGNlZWVjODllMTExOGU5NDFmZDgzNjRlYTIyMTUyZTQxZGM1ZjIzMjg0YmEifQ%3D%3D; expires=Fri, 25-Nov-2016 23:32:18 GMT; Max-Age=7200; path=/; httponly', 'Server': 'Apache', 'Connection': 'Keep-alive', 'Cache-Control': 'no-cache', 'Date': 'Fri, 25 Nov 2016 21:32:18 GMT', 'Content-Type': 'application/json'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.5' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiClient_confirmbooking</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.5')" >
+        pass</a>
+
+    <div id='div_pt2.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.5: text/html; charset=UTF-8
+[ERROR] when calling[https://stage.handstandapp.com/api/confirmbooking?] got back HTTP response code:500
+{'Transfer-Encoding': 'chunked', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6Im1YS0kxZUV5NDkwS1YzSXhpRVd2cXc9PSIsInZhbHVlIjoiTzBza1BkM0pYdGsweDAzMzlsb3FxWmVXK3I5ZThwVExEUGlGN1ZSRVBWM0g1UVoyTUg1QUlyKzE3UkUrbTdIbG1HbjJJbzlwRW5cL3RwSjhPOWNmRG5nPT0iLCJtYWMiOiJjYjliODZiMTFhNGZiMTkzZjFkOGU4ODU0MmExMWJmMGE2YmNlMDRkNDAwYzk2ZjU1NjQ0NGE4MzA2N2Q1ZmE1In0%3D; expires=Fri, 25-Nov-2016 23:32:20 GMT; Max-Age=7200; path=/, laravel_session=eyJpdiI6ImlYNnhIQkxlanE5Y3J6enpVRmI1NHc9PSIsInZhbHVlIjoiUU9qckg2eHE4THVqWFBkT1dsYTZtU0ZcL1d2NGJWaTFVQUlRNTlyekFOcmFSSjJZRHBjZWdjZEJzSlVSYmxMUll2Ung2aHNWSE9iaUt4Ums5Yk5jKzdRPT0iLCJtYWMiOiI1MWQxZjQ5ZDc3MzZhZWFmNzYwYWVhNzAxYWE0MTNkMGI3NDZmNjViMWM3ZjUyOGI4OGI3NmVhM2MwMWYwNmI0In0%3D; expires=Fri, 25-Nov-2016 23:32:20 GMT; Max-Age=7200; path=/; httponly', 'Server': 'Apache', 'Connection': 'Keep-alive', 'Cache-Control': 'no-cache, private', 'Date': 'Fri, 25 Nov 2016 21:32:20 GMT', 'Content-Type': 'text/html; charset=UTF-8'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.6' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiClient_sendtoalltrainers</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.6')" >
+        pass</a>
+
+    <div id='div_pt2.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.6: text/html; charset=UTF-8
+[ERROR] when calling[https://stage.handstandapp.com/api/sendtoalltrainers] got back HTTP response code:405
+{'Transfer-Encoding': 'chunked', 'Server': 'Apache', 'Connection': 'Keep-alive', 'allow': 'GET, HEAD', 'Cache-Control': 'no-cache, private', 'Date': 'Fri, 25 Nov 2016 21:32:22 GMT', 'Content-Type': 'text/html; charset=UTF-8'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.7' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiClient_uploadtoken</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.7')" >
+        pass</a>
+
+    <div id='div_pt2.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.7: a03f0f9133c6120245aa836d148b09f9
+[SUCCESS]when calling[https://stage.handstandapp.com/api/uploadtoken?]
+{"result":"success","status":200}
+{'Content-Length': '33', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6ImFnRmlBTzd4TENlU2ZWTnZDK3pmZXc9PSIsInZhbHVlIjoiVWl3Y2E2dzVVODludHJ6VjgyWHJqSEJwdlwvT3FHNGkrZlZoU0w5ZklicDdqXC9RMzlzek5YUEk4RlR6WWNieXNlOXZXVytjdGdlYjNqa3h2eTBpcGlmdz09IiwibWFjIjoiYjMxYTI3MzlkYTBiMWM0OWVjNGIyMGVjNWY4ZWRhMTJhYmU1MTc1YTY5YTVmOGIxODRhZTZkNDJiODcwN2E5YyJ9; expires=Fri, 25-Nov-2016 23:32:24 GMT; Max-Age=7200; path=/, laravel_session=eyJpdiI6ImhDU01aQkczakJwQVZjZUI1R2dyQ0E9PSIsInZhbHVlIjoiMGpsendWNFlabjVJNFlHcDhqYUZVQnRqZDY3cGVJc3dyZEE1aTN6OURMTDRqV1hHYWJRcjV5cnJ4cm5TWUVwSlY4eStBdm8xR1VCclJnXC9ramd6V3ZnPT0iLCJtYWMiOiJiNDI0ZGZkZWI5OGQ0YzRkOTY1MjZjYmE5NjcyYWM3NDBkODM3MWJlMzY1OGY4MTQ4YzA5ZmRjMmM5YjdiMWQxIn0%3D; expires=Fri, 25-Nov-2016 23:32:24 GMT; Max-Age=7200; path=/; httponly', 'Server': 'Apache', 'Connection': 'Keep-alive', 'Cache-Control': 'no-cache', 'Date': 'Fri, 25 Nov 2016 21:32:24 GMT', 'Content-Type': 'application/json'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.8' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiClient_workouts</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.8')" >
+        pass</a>
+
+    <div id='div_pt2.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.8: application/json
+[ERROR] when calling[https://stage.handstandapp.com/api/workouts?] got back HTTP response code:422
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.9' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiTrainer_availibility</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.9')" >
+        pass</a>
+
+    <div id='div_pt2.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.9: [SUCCESS]when calling[https://stage-handstand-web.us-east-1.elasticbeanstalk.com/api/availibility]
+{"result":"success","status":200}
+{'Content-Length': '33', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6IjJBTG9XRFwvVmpsTkhIeFpzTFV5U0Z3PT0iLCJ2YWx1ZSI6Ik43VGc2cU9lVUpJZWthTExscmxHcVRpR2JhQ2NJMXZGOStmWldrU0M2K1NWQWRoWnhMZ2FHODEzYU5iWFJzcUlHanlndEF2Vm85b3FGV2E1SHFDNDNRPT0iLCJtYWMiOiIwMGYyZDg1ZjQwNDYzYjZmMTI5MTBkOWUyYzE2NzYwOTEzYWEyZWMxMzNkYjZlNWMwNzQ4NjE1MzM4MjlhZDFiIn0%3D; expires=Fri, 25-Nov-2016 23:32:28 GMT; Max-Age=7200; path=/, laravel_session=eyJpdiI6IitDeDVHMjBYc1JuaEtUSEhVQU5odGc9PSIsInZhbHVlIjoiUUgyM0xMSFh3QzBzUTh0NGtOeVN3SDc3UzltaEIzNE5SVWpUanpjQVpVYU91ZVh4S3dYMjk3Y0hXYlp2QmpjYzRRM2g3RlwveElYeWFMaUtqeXpRT2V3PT0iLCJtYWMiOiJlMDlmNTA2Mzc3MTZkNTI0MjNjNjdjZDIyN2Q4YTU2OGUzZDFlYzUxOTYwOGUxYTg2ZmExZTRjZGMxNzgxY2FlIn0%3D; expires=Fri, 25-Nov-2016 23:32:28 GMT; Max-Age=7200; path=/; httponly', 'Server': 'Apache', 'Connection': 'Keep-alive', 'Cache-Control': 'no-cache', 'Date': 'Fri, 25 Nov 2016 21:32:28 GMT', 'Content-Type': 'application/json'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.10' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiTrainer_bookclient</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.10')" >
+        pass</a>
+
+    <div id='div_pt2.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.10: [SUCCESS]when calling[https://stage.handstandapp.com/api/bookclient?]
+{"result":"error","errors":[""],"status":422,"message":"Failed to charge User : Cannot charge a customer that has no active card"}
+{'Content-Length': '130', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6ImhhSEt5RjZLQlU0bmtjV0VMc29UaFE9PSIsInZhbHVlIjoiMWsyZGI4SmVkS2FZaFJ4RjVOdjZ4dVJXakNzVFhBdVpoMUtzUlBoV1h5cWtrNW5OYUtGRXh2YWhPd3JvVjVSWlZLb25EQTZkbmxnS0NoekdUSmVvRXc9PSIsIm1hYyI6IjQ2YTNkM2M5Yzg5YmIwYmFmZmVlYzhlYjMyMmQyNzRkNjUyZDU3NDhmMjlhMjBkNjNmOTk1OWEwMjBmYzYyZDMifQ%3D%3D; expires=Fri, 25-Nov-2016 23:32:31 GMT; Max-Age=7200; path=/, laravel_session=eyJpdiI6ImtkckZkb0tPR1wvY2RjRzFsbWFIZElBPT0iLCJ2YWx1ZSI6IktxZ2hjNGxYcGdsak1Fb1NWXC80enl5UEVEUkJucWNWXC9LQnJOZDFkNENLMG50OWw1Wkd0Y0lmXC8yMzB5R0tybzRJYnlpSVc0YldrTGs4VHRSMzJLcTh3PT0iLCJtYWMiOiIwMTNlY2QwODRmMWUxYmQyMmJiNTBkMWFhMWJlNzRlMjRjZDNkOGNhYmI0MjFiMWFmZmZiYmIwMWZlZTY0ZTJkIn0%3D; expires=Fri, 25-Nov-2016 23:32:31 GMT; Max-Age=7200; path=/; httponly', 'Server': 'Apache', 'Connection': 'Keep-alive', 'Cache-Control': 'no-cache', 'Date': 'Fri, 25 Nov 2016 21:32:30 GMT', 'Content-Type': 'application/json'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.11' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiTrainer_confirmbooking</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.11')" >
+        pass</a>
+
+    <div id='div_pt2.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.11: [SUCCESS]when calling[https://stage.handstandapp.com/api/confirmbooking]
+{"result":"success","status":200,"message":"You have already responded to this booking"}
+{'Content-Length': '88', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6IjJjaFNmUGZmdHROVEpIS3FxVDhcL29nPT0iLCJ2YWx1ZSI6InQzSFo3UUZQdERnQzhpK0JRRGQzYVRrRXd5cGNaT1BPWXFGQ2lnaHFyZ2MwcmQ3M0ZFZnc5eWNMZjFFZUNlaDRvd29ycTNndXBCbktOK3dZcEc4KzNnPT0iLCJtYWMiOiIzNGYzNDdiZDNmM2QxZDI3YmMzNmUzOTE5MWUzMzdkNzg3ZTQxNjQ1MDA3MGU0YzRmN2QxNjQxNzgxOTgxOGU4In0%3D; expires=Fri, 25-Nov-2016 23:32:32 GMT; Max-Age=7200; path=/, laravel_session=eyJpdiI6IjE5TEFTODlnY01NZ0M2bkFvVUtzMFE9PSIsInZhbHVlIjoiNW9HbVVmM1lHb200aitTZmdGb1VMbzR5bUNkOFpOMFAxUHRYRXZkT2xSZjg3QkFOVnRQMzU2eWhOQllaSVBrNWprNHQrZzdVSTRuQXR0VXNRbjZzYnc9PSIsIm1hYyI6IjM4MmI4MzE2ZDQ0ZTNhZGFmZjAyYzJjNGE0NmQwOTU1ODhjOGMxYmIyNDkxODgwZWZlNzcxMTg5YjEwMDM0YWMifQ%3D%3D; expires=Fri, 25-Nov-2016 23:32:32 GMT; Max-Age=7200; path=/; httponly', 'Server': 'Apache', 'Connection': 'Keep-alive', 'Cache-Control': 'no-cache', 'Date': 'Fri, 25 Nov 2016 21:32:32 GMT', 'Content-Type': 'application/json'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.12' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_postapiTrainer_uploadtoken</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.12')" >
+        pass</a>
+
+    <div id='div_pt2.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.12: [SUCCESS]when calling[https://stage.handstandapp.com/api/uploadtoken]
+{"result":"success","status":200}
+{'Content-Length': '33', 'Set-Cookie': 'XSRF-TOKEN=eyJpdiI6IlFrOTkxeWJZWHNDeitvd1hRaDlEVkE9PSIsInZhbHVlIjoiVlJpWGNwUnQ0cmFhcXBNSjM5YldDbElcL0J3RE1VaGFlWWZQTDZQbnpHUTFQUUU1cktlSk95NWlwdVBrc3F0NFZSYWJBY0NKQ2UzNVc5QzBCcFdDVUh3PT0iLCJtYWMiOiJiN2ZjMzkxYjkzOTliYmZmYmFmODZkNTM0MjU1MWNlN2Q4ZjFlM2VlMzk0ODQzNTgyOGEwYzJkN2RlMThiZjNiIn0%3D; expires=Fri, 25-Nov-2016 23:32:33 GMT; Max-Age=7200; path=/, laravel_session=eyJpdiI6InRNXC9wdFkydHZSOXh1K1hQdVVUSk93PT0iLCJ2YWx1ZSI6ImxDNDJHUXduVUZlUkhYTmR4M0lZdnVYUnVYcmJLQ0EwM290Y2M0Z29WVFJIWjZpUm1DQXJVeFowU3FLYTlaVWQwbWdjSDV2YW9rdUFcL241MWxPa2JYUT09IiwibWFjIjoiZWZiMjQxYTQ2NjJlZDNjYmJiMjlmZTFkZjBkZjg1MjA0ZjNkYjcwMDk0OTdiYWZkODA0ZWE0MmE2NDNjMDhiNCJ9; expires=Fri, 25-Nov-2016 23:32:33 GMT; Max-Age=7200; path=/; httponly', 'Server': 'Apache', 'Connection': 'Keep-alive', 'Cache-Control': 'no-cache', 'Date': 'Fri, 25 Nov 2016 21:32:33 GMT', 'Content-Type': 'application/json'}
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+    <td>Total</td>
+    <td>13</td>
+    <td>13</td>
+    <td>0</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>
